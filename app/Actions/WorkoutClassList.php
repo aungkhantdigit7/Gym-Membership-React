@@ -3,6 +3,7 @@
 namespace App\Actions;
 
 use App\Models\WorkoutClass;
+use Illuminate\Routing\Router;
 use Inertia\Inertia;
 use Lorisleiva\Actions\Concerns\AsAction;
 use Spatie\QueryBuilder\QueryBuilder;
@@ -31,6 +32,12 @@ class WorkoutClassList
         return $this->handle($perPage);
     }
 
+     public static function routes(Router $router)
+    {
+        $router->middleware(['web', 'auth']) // 'web' applies HandleInertiaRequests
+            ->get('admin/workflow-class/', static::class)
+            ->name('admin.workflow-class.list');
+    }
     public function htmlResponse()
     {
         $data = $this->handle();

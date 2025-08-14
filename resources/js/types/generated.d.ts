@@ -24,6 +24,13 @@ specialization: string | null;
 created_at: string | null;
 updated_at: string | null;
 };
+export type TrainerRequestData = {
+name: string;
+email: string;
+phone: string;
+bio: string;
+specialization: string;
+};
 export type WorkoutClassData = {
 id: number | null;
 name: string;

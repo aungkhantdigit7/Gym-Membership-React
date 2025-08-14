@@ -35,7 +35,7 @@ class TrainerForm
     {
         $router->middleware(['web', 'auth']) // 'web' applies HandleInertiaRequests
             ->get('admin/trainers/form/{id?}', static::class)
-            ->name('admin.trainers.form');
+            ->name('admin.trainer.form');
     }
     public function htmlResponse()
     {

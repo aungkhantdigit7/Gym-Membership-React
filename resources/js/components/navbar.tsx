@@ -5,6 +5,7 @@ import {
   IconDatabaseImport,
   IconFingerprint,
   IconKey,
+  IconList,
   IconLogout,
   IconReceipt2,
   IconSettings,
@@ -18,6 +19,8 @@ import { Link, router } from '@inertiajs/react';
 
 const data = [
   { link: route('dashboard'), label: 'Dashboard', icon: IconBellRinging },
+  { link: route('admin.workflow-class.list'), label: 'Workout Classes', icon: IconList },
+  { link: route('admin.diet-plans.list'), label: 'Diet Plans', icon: IconList },
   { link: route('admin.trainers.list'), label: 'Trainers', icon: IconUser },
 
 
@@ -58,12 +61,15 @@ export function Navbar() {
       </div>
 
       <div className={classes.footer}>
-        <a href="#" className={classes.link} onClick={(event) => event.preventDefault()}>
+        {/* <a href="#" className={classes.link} onClick={(event) => event.preventDefault()}>
           <IconSwitchHorizontal className={classes.linkIcon} stroke={1.5} />
           <span>Change account</span>
-        </a>
+        </a> */}
 
-        <a href="#" className={classes.link} onClick={(event) => event.preventDefault()}>
+        <a href="#" className={classes.link} onClick={(event) => {
+          event.preventDefault();
+          router.post(route('logout'));
+        }}>
           <IconLogout className={classes.linkIcon} stroke={1.5} />
           <span>Logout</span>
         </a>

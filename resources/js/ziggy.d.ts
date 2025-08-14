@@ -21,7 +21,8 @@ declare module 'ziggy-js' {
             "required": true
         }
     ],
-    "admin.trainers.form": [
+    "admin.trainer.store": [],
+    "admin.trainer.form": [
         {
             "name": "id",
             "required": false
@@ -29,6 +30,13 @@ declare module 'ziggy-js' {
     ],
     "admin.trainers.list": [],
     "admin.workout-classes.store": [],
+    "admin.workout-class.form": [
+        {
+            "name": "id",
+            "required": false
+        }
+    ],
+    "admin.workflow-class.list": [],
     "home": [],
     "dashboard": [],
     "profile.edit": [],

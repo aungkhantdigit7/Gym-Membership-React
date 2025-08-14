@@ -3,6 +3,7 @@
 namespace App\Actions\Workout;
 
 use App\Models\WorkoutClass;
+use Illuminate\Routing\Router;
 use Inertia\Inertia;
 use Lorisleiva\Actions\Concerns\AsAction;
 
@@ -30,6 +31,13 @@ class WorkoutForm
             $this->workoutclass = new WorkoutClass();
         }
         $this->handle($id);
+    }
+
+    public static function routes(Router $router)
+    {
+        $router->middleware(['web', 'auth']) // 'web' applies HandleInertiaRequests
+            ->get('admin/workout-class/form/{id?}', static::class)
+            ->name('admin.workout-class.form');
     }
 
     public function htmlResponse()

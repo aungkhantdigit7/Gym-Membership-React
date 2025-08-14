@@ -21,11 +21,10 @@ class WorkoutClass extends Model implements HasMedia
     ];
     public function registerMediaCollections(): void
     {
-        // $this->addMediaCollection('videos')
-        //     ->useDisk('public'); // optional`
+        
 
         $this->addMediaCollection('previews_image')
             ->useDisk('public')
-            ->singleFile(); // only one thumbnail per video
+            ->singleFile(); 
     }
 }

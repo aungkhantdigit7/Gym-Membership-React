@@ -1,5 +1,6 @@
 import AppSidebarLayout from "@/layouts/app/app-sidebar-layout";
 import { Pagination } from "@/types";
+import { Link } from "@inertiajs/react";
 import { Button, Group, Title } from "@mantine/core";
 import { DataTable } from "mantine-datatable";
 
@@ -13,7 +14,7 @@ export default function List({ trainers }: Props) {
         <AppSidebarLayout>
             <Group justify="space-between">
                 <Title order={2}>Trainers</Title>
-                <Button>Add Trainer</Button>
+                <Button href={route('admin.trainer.form')} component={Link}>Add Trainer</Button>
             </Group>
             {/* <pre>{JSON.stringify(trainers, null, 2)}</pre> */}
             <DataTable withTableBorder records={trainers.data}
